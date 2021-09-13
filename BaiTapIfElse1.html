@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<h1>Bài 1</h1>
+Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không ? <br>
+<input type="text" id="soThuNhat" placeholder="Nhập số a">
+<input type="text" id="soThuHai" placeholder="Nhập số b">
+<button onclick="kiemTra()"> Kiểm tra</button>
+<br>
+<h1>Bài 2</h1>
+Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.<br>
+<input type="text" id="soTuoi" placeholder="Nhập tuổi của học sinh"> <br> <br>
+<button onclick="duTuoi()">Kiểm tra</button>
+<br>
+<h1>Bài 3</h1>
+Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0 <br>
+<input type="text" id="soNguyen" placeholder="Nhập 1 số nguyên"> <br> <br>
+<button onclick="lonHonKhong()">Kiểm tra</button>
+<br>
+<h1>Bài 4</h1>
+Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó <br>
+<input type="text" id="soMot" placeholder="Nhập số nguyên mot"> <br> <br>
+<input type="text" id="soHai" placeholder="Nhập số nguyên hai"> <br> <br>
+<input type="text" id="soBa" placeholder="Nhập số nguyên ba"> <br> <br>
+<button onclick="timSoLonNhat()">Kiểm tra</button>
+<br>
+<h1>Bài 5</h1>
+Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ <br>
+<input type="text" id="baiKiemTra" placeholder="Nhập điểm kiểm tra "> <br> <br>
+<input type="text" id="thiGiuaKy" placeholder="Nhập điểm thi giữa kỳ"> <br> <br>
+<input type="text" id="thiCuoiKy" placeholder="Nhập điểm thi cuối kỳ"> <br> <br>
+<button onclick="xepHang()"> Xếp hạng </button>
+<br> <br>
+<h1>Bài 6</h1>
+Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng <br><br>
+<input  style="width: 400px" type="text" id="KPI" placeholder="Bạn đã đạt được bao nhiêu % target tháng này rồi ? "> <br> <br>
+<button  onclick="tinhHoaHong()"> Tính toán </button>
+<p id="hoaHong"></p>
+<br> <br>
+<h1>Bài 7</h1>
+Tính cước điện thoại cho một hộ gia đình với các thông số đã cho <br>
+<input style="width: 400px" id="thoiGian" type="text" placeholder="Nhập thời gian sử dụng tính bằng phút"> <br> <br>
+Chọn gói cước
+<select id="heSo">
+    <option value="normal">Normal</option>
+    <option value="good">Good</option>
+    <option value="vip">Vip pro</option>
+</select>
+<br>
+<button onclick="tinhCuoc()">Tính toán</button>
+<script>
+function kiemTra() {
+    let a = +document.getElementById("soThuNhat").value;
+    let b = +document.getElementById("soThuHai").value;
+    let c = a % b;
+    if (c == 0){
+        alert("a chia hết cho b");
+    } else {
+        alert("a không chia hết cho b");
+    }
+}
+function duTuoi() {
+    let tuoi = document.getElementById("soTuoi").value;
+    if (tuoi >= 15) {
+        alert("Học sinh đủ tuổi học lớp 10")
+    } else {
+        alert("Học sinh chưa đủ tuổi học lớp 10")
+    }
+}
+function lonHonKhong() {
+    let soNguyen= +document.getElementById("soNguyen").value;
+    if (soNguyen > 0) {
+        alert("Số này lớn hơn không")
+    } else if (soNguyen == 0) {
+        alert("Số này bằng không")
+    }else {
+        alert("Số này bé hơn không")
+    }
+}
+function timSoLonNhat() {
+    let soMot=+document.getElementById("soMot").value;
+    let soHai=+document.getElementById("soHai").value;
+    let soBa=+document.getElementById("soBa").value;
+    let maxValue= soMot;
+    if(soHai > maxValue){
+        maxValue = soHai ;
+    }
+    if(soBa > maxValue) {
+        maxValue = soBa;
+    }
+    alert("Số lớn nhất là " + maxValue);
+}
+function xepHang() {
+    let kiemTra = +document.getElementById("baiKiemTra").value;
+    let giuaKy = +document.getElementById("thiGiuaKy").value;
+    let cuoiKy = + document.getElementById("thiCuoiKy").value;
+    let diemTrungBinh = (kiemTra + giuaKy + cuoiKy)/3;
+    if (diemTrungBinh > 8) {
+        alert("Học sinh giỏi")
+    }else if (diemTrungBinh > 6.5) {
+        alert("Học sinh khá")
+    }else if (diemTrungBinh > 4 ) {
+        alert("Học sinh trung bình")
+    } else {
+        alert("Học sinh kém")
+    }
+}
+function tinhHoaHong() {
+    let kpi = +document.getElementById("KPI").value;
+    if (kpi > 120 ) {
+        document.getElementById("hoaHong").innerHTML = "Bạn sẽ nhận được 10% hoa hồng"
+    } else if (kpi > 100 ) {
+        document.getElementById("hoaHong").innerHTML = "Bạn sẽ nhận được 7% hoa hồng"
+    }else if (kpi > 80) {
+        document.getElementById("hoaHong").innerHTML = "Bạn sẽ nhận được 5% hoa hồng"
+    }else {
+        document.getElementById("hoaHong").innerHTML = "Bạn sẽ nhận được 3% hoa hồng"
+    }
+}
+function tinhCuoc(){
+    let heSo = document.getElementById("heSo").value;
+    let thoiGian = +document.getElementById("thoiGian").value;
+    if (heSo == "normal") {
+        alert("Số tiền cước phải trả là " + thoiGian*1000 )
+    } else  if ( heSo == "good") {
+        alert("Số tiền cước phải trả là " + thoiGian * 2000)
+    } else {
+        alert("Số tiền cước phải trả là " + thoiGian * 3000)
+    }
+}
+</script>
+</body>
+</html>
