@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<script>
+  let tieuThu = +prompt("Nhập số kWh nhà bạn dùng trong 1 tháng ")
+  if (tieuThu > 0){
+    if (tieuThu > 50){
+      if ( tieuThu > 100) {
+        alert("Số tiền bạn phải trả là " + (50*1000 + 50*2000 + (tieuThu-100)*3000));
+      }else {
+        alert("Số tiền bạn phải trả là " + (50*1000 + (tieuThu-50)*2000));
+      }
+    }else {
+      alert("Số tiền bạn phải trả là " + tieuThu*1000)
+    }
+  }else {
+    alert("Ko thể có chuyện 1 tháng ko dùng số điện nào nhá")
+  }
+</script>
+</body>
+</html>

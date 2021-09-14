@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+
+  let a = +prompt("Nhập vào cạnh a")
+  let b = +prompt("Nhập vào cạnh b")
+  let c = +prompt("Nhập vào cạnh c")
+  let d = a > 0 && b > 0 && c > 0;
+  let e = a + b > c;
+  let f = b + c > a;
+  let g = a + c > b;
+  if (d == true  && e == true && f == true && g == true){
+    alert("Đây là 3 cạnh của 1 tam giác")
+  }else {
+    alert("Đây không phải 3 cạnh của tam giác")
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+<script>
+    let thuNhap = +prompt("Nhập thu nhập hàng tháng của bạn để tính thuế TNCN ,đơn vị triệu");
+    if (thuNhap > 0){
+        if (thuNhap > 5){
+            if ( thuNhap > 10) {
+                alert("Số thuế TNCN bạn phải nộp là " + thuNhap*15/100 );
+            }else {
+                alert("Số thuế TNCN bạn phải nộp là " + thuNhap*10/100);
+            }
+        }else {
+            alert("Số thuế TNCN bạn phải nộp là"  + thuNhap*5/100)
+        }
+    }else {
+        alert("Bạn ko phải đóng nha")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+  let a = +prompt("Nhập vào hệ số a trong phương trình ax^2 + bx + c = 0");
+  let b = +prompt("Nhập vào hệ số b trong phương trình ax^2 + bx +c = 0");
+  let c = +prompt("Nhập vào hệ số c trong phương trình ax^2 + bx +c = 0");
+  let delta = b**2 - 4*a*c;
+
+  if ( delta < 0){
+    alert("Phương trình vô nghiệm");
+  } else if (delta == 0 ) {
+    let x1 = -b /(2*a);
+    alert(" Phương trình có nghiệm kép x1 = x2 = " + x1)
+  } else {
+    let x1 = (-b + Math.sqrt(delta))/(2*a);
+    let x2 = (-b - Math.sqrt(delta))/(2*a);
+    alert("Phương trình có nghiệm x1 = " + x1 + " ; x2 = " + x2);
+  }
+</script>
+</body>
+</html>
