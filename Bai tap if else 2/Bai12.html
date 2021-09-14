@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<script>
+    let khoanVayGoc = +prompt("Nhập khoản vay ban đầu đơn vị triệu");
+    let soThang = + prompt("Nhập số tháng vay ");
+    let laiSuat = + prompt("Nhập lãi suất hàng tháng đơn vị %");
+    let tongTien = khoanVayGoc* (( 1 + laiSuat/100 )**soThang)
+    alert("Tổng tiền bạn phải trả là " + parseInt(tongTien) );
+</script>
+</body>
+</html>
