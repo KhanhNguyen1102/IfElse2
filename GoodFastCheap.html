@@ -5,18 +5,32 @@
     <title>Good Fast Cheap</title>
 </head>
 <body>
-<input id="good" type="checkbox" value="Good" oninput="check('fast')">Good <br> <br>
-<input id="fast" type="checkbox" value="Fast" oninput="check('cheap')">Fast <br> <br>
-<input id="cheap" type="checkbox" value="Cheap" oninput="check('good')"> Cheap <br> <br>
+<input id="good"  type="checkbox" onchange="checkGood()">Good <br> <br>
+<input id="fast" type="checkbox" onchange="checkFast()">Fast <br> <br>
+<input id="cheap" type="checkbox" onchange="checkCheap()"> Cheap <br> <br>
 </body>
 <script>
-function check(option){
-  let goodIsChecked = document.getElementById("good").checked;
-  let fastIsChecked = document.getElementById("fast").checked;
-  let cheapIsChecked = document.getElementById("cheap").checked;
-if (goodIsChecked == fastIsChecked == cheapIsChecked == true){
-  document.getElementById(option).checked = false;
-}
-}
+    function checkGood() {
+        let cheap = document.getElementById("cheap").checked;
+        let fast = document.getElementById("fast").checked;
+        if (cheap && fast) {
+            document.getElementById("cheap").checked = false;
+        }
+    }
+
+    function checkFast() {
+        let good = document.getElementById("good").checked;
+        let cheap = document.getElementById("cheap").checked;
+        if (good && cheap) {
+            document.getElementById("good").checked = false;
+        }
+    }
+    function checkCheap() {
+        let fast = document.getElementById("fast").checked;
+        let good = document.getElementById("good").checked;
+        if (good && fast) {
+            document.getElementById("fast").checked = false;
+        }
+    }
 </script>
 </html>
